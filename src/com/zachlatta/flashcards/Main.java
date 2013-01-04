@@ -1,6 +1,5 @@
 package com.zachlatta.flashcards;
 
-import com.zachlatta.flashcards.controller.Controller;
 import com.zachlatta.flashcards.view.FileSelection;
 
 import javax.swing.*;
@@ -13,7 +12,6 @@ import javax.swing.*;
 public class Main
 {
     public static JFrame frame;
-    public static Controller controller = new Controller();
 
     public static void main(String[] args)
     {
