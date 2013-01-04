@@ -7,6 +7,7 @@ import com.zachlatta.flashcards.view.FileChooser;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -52,6 +53,11 @@ public class Controller
                     JOptionPane.ERROR_MESSAGE
             );
         }
+    }
+
+    public static void fileChosen(File file)
+    {
+        csvPath = file.getPath();
     }
 
     public static void showFileChooser(Component parent)

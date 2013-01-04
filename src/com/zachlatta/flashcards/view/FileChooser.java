@@ -22,7 +22,7 @@ public class FileChooser
 
         if(returnValue == JFileChooser.APPROVE_OPTION)
         {
-            Controller.setCsvPath(fileChooser.getSelectedFile().getPath());
+            Controller.fileChosen(fileChooser.getSelectedFile());
         }
     }
 }
