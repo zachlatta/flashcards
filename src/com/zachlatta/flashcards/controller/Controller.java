@@ -29,7 +29,7 @@ public class Controller
 
             String[] line;
 
-            for(int index = 0; (line = reader.readNext()) != null; index++)
+            while((line = reader.readNext()) != null)
             {
                 flashcardSet.addFlashcard(new Flashcard(line[0], line[1]));
             }
