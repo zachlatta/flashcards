@@ -1,7 +1,6 @@
 package com.zachlatta.flashcards.controller;
 
 import au.com.bytecode.opencsv.CSVReader;
-import com.sun.xml.internal.ws.util.CompletedFuture;
 import com.zachlatta.flashcards.Main;
 import com.zachlatta.flashcards.model.Flashcard;
 import com.zachlatta.flashcards.model.FlashcardSet;
@@ -10,8 +9,6 @@ import com.zachlatta.flashcards.view.*;
 import javax.swing.*;
 import java.awt.*;
 import java.io.*;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
 /**
  * The main controller class
@@ -143,7 +140,7 @@ public class Controller
             }
         }
 
-        return correct + "/" + total + " (" + (double)Math.round((double)correct / (double)total * 10000) / 100 + "%)";
+        return correct + "/" + total + " (" + (double) Math.round((double) correct / (double) total * 10000) / 100 + "%)";
     }
 
     public static void chooseAFilePressed(Component parent, JLabel filePathLabel)

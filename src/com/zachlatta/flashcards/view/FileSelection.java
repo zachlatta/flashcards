@@ -1,6 +1,5 @@
 package com.zachlatta.flashcards.view;
 
-import com.zachlatta.flashcards.Main;
 import com.zachlatta.flashcards.controller.Controller;
 
 import javax.swing.*;
