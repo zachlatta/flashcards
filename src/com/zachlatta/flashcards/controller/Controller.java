@@ -3,8 +3,11 @@ package com.zachlatta.flashcards.controller;
 import au.com.bytecode.opencsv.CSVReader;
 import com.zachlatta.flashcards.model.Flashcard;
 import com.zachlatta.flashcards.model.FlashcardSet;
+import com.zachlatta.flashcards.view.FileChooser;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -50,6 +53,11 @@ public class Controller
                     JOptionPane.ERROR_MESSAGE
             );
         }
+    }
+
+    public static void showFileChooser(Component parent)
+    {
+        FileChooser.show(parent);
     }
 
     public static void setCsvPath(String csvPath)

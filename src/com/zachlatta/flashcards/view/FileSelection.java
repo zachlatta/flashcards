@@ -23,6 +23,7 @@ public class FileSelection
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                Controller.showFileChooser(panel1);
             }
         });
 

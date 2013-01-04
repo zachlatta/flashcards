@@ -4,8 +4,6 @@ import com.zachlatta.flashcards.controller.Controller;
 import com.zachlatta.flashcards.view.FileSelection;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Start of the application.
