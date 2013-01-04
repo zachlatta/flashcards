@@ -6,7 +6,6 @@ import com.zachlatta.flashcards.model.FlashcardSet;
 import com.zachlatta.flashcards.view.FileChooser;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

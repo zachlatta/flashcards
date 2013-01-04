@@ -1,9 +1,7 @@
 package com.zachlatta.flashcards.model;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * A set of flashcards.
@@ -39,7 +37,7 @@ public class FlashcardSet
      * Returns the flashcard at the specified index in the set.
      *
      * @param index The index of the flashcard to return.
-     * @return      The flashcard at the specified index in the set.
+     * @return The flashcard at the specified index in the set.
      */
     public Flashcard getFlashcard(int index)
     {

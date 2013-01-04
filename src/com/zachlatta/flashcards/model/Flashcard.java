@@ -14,7 +14,7 @@ public class Flashcard
     /**
      * Creates a new flashcard.
      *
-     * @param term The term of the flashcard.
+     * @param term       The term of the flashcard.
      * @param definition The definition of the flashcard.
      */
     public Flashcard(String term, String definition)
