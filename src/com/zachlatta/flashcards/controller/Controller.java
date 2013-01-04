@@ -7,10 +7,7 @@ import com.zachlatta.flashcards.view.FileChooser;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * The main controller class
@@ -26,7 +23,7 @@ public class Controller
     {
         try
         {
-            CSVReader reader = new CSVReader(new FileReader(csvPath));
+            CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream(csvPath), "UTF-16"));
 
             String[] line;
 
