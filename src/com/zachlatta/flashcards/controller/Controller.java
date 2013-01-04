@@ -55,6 +55,7 @@ public class Controller
     public static void fileChosen(File file)
     {
         csvPath = file.getPath();
+
     }
 
     public static void showFileChooser(Component parent)
@@ -65,5 +66,10 @@ public class Controller
     public static void setCsvPath(String csvPath)
     {
         Controller.csvPath = csvPath;
+    }
+
+    public static void updateFilePathLabel(JLabel filePathLabel)
+    {
+        filePathLabel.setText(csvPath);
     }
 }

@@ -15,6 +15,7 @@ public class FileSelection
     private JPanel panel1;
     private JButton chooseAFileButton;
     private JButton openFileButton;
+    private JLabel filePathLabel;
 
     public FileSelection()
     {
@@ -24,6 +25,7 @@ public class FileSelection
             public void actionPerformed(ActionEvent e)
             {
                 Controller.showFileChooser(panel1);
+                Controller.updateFilePathLabel(filePathLabel);
             }
         });
 
@@ -50,5 +52,10 @@ public class FileSelection
     public JButton getOpenFileButton()
     {
         return openFileButton;
+    }
+
+    public JLabel getFilePathLabel()
+    {
+        return filePathLabel;
     }
 }
