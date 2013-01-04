@@ -24,8 +24,7 @@ public class FileSelection
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                Controller.showFileChooser(panel1);
-                Controller.updateFilePathLabel(filePathLabel);
+                Controller.chooseAFilePressed(panel1, filePathLabel);
             }
         });
 
@@ -34,7 +33,7 @@ public class FileSelection
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                Controller.loadFlashcards(Main.frame);
+                Controller.openPressed();
             }
         });
     }

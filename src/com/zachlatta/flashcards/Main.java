@@ -15,10 +15,36 @@ public class Main
 
     public static void main(String[] args)
     {
-        frame = new JFrame("FileSelection");
-        frame.setContentPane(new FileSelection().getPanel1());
+        frame = new JFrame("Flashcards");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setLookAndFeel();
+
+        frame.setContentPane(new FileSelection().getPanel1());
         frame.pack();
         frame.setVisible(true);
+    }
+
+    private static void setLookAndFeel()
+    {
+        try
+        {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        }
+        catch (UnsupportedLookAndFeelException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InstantiationException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

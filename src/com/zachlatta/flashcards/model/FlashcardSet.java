@@ -43,4 +43,12 @@ public class FlashcardSet
     {
         return flashcards.get(index);
     }
+
+    /**
+     * Returns the size of the flashcard set.
+     */
+    public int size()
+    {
+        return flashcards.size();
+    }
 }
