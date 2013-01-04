@@ -17,6 +17,7 @@ public class Main
     {
         frame = new JFrame("Flashcards");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setResizable(false);
         setLookAndFeel();
 
         frame.setContentPane(new FileSelection().getPanel1());
