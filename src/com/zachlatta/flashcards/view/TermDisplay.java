@@ -15,27 +15,35 @@ public class TermDisplay
     private JPanel panel1;
     private JLabel termLabel;
     private JButton flipCardButton;
+	private Action flipAction;
 
-    private Flashcard flashcard;
-
-    public TermDisplay(Flashcard flashcard1)
+    public TermDisplay(Flashcard flashcard)
     {
-        this.flashcard = flashcard1;
+        flipAction = new FlipAction(flashcard);
 
         termLabel.setText(flashcard.getTerm());
 
-        flipCardButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Controller.flipButtonPressed(flashcard);
-            }
-        });
+        flipCardButton.addActionListener(flipAction);
     }
 
     public JPanel getPanel1()
     {
         return panel1;
     }
+
+	public class FlipAction extends AbstractAction
+	{
+		private Flashcard flashcard;
+
+		public FlipAction(Flashcard flashcard)
+		{
+			this.flashcard = flashcard;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			Controller.flipButtonPressed(flashcard);
+		}
+	}
 }

@@ -6,6 +6,8 @@ import com.zachlatta.flashcards.model.Flashcard;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * @author Zachary Latta
@@ -16,36 +18,51 @@ public class DefinitionDisplay
     private JButton correctButton;
     private JButton incorrectButton;
     private JLabel definitionLabel;
+	private Action correctAction, incorrectAction;
 
-    private Flashcard flashcard;
-
-    public DefinitionDisplay(Flashcard flashcard1)
+    public DefinitionDisplay(Flashcard flashcard)
     {
-        this.flashcard = flashcard1;
+        correctAction = new CorrectAction(flashcard);
+		incorrectAction = new IncorrectAction(flashcard);
 
         definitionLabel.setText(flashcard.getDefinition());
 
-        correctButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Controller.correctButtonPressed(flashcard);
-            }
-        });
-
-        incorrectButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Controller.incorrectButtonPressed(flashcard);
-            }
-        });
+        correctButton.addActionListener(correctAction);
+        incorrectButton.addActionListener(incorrectAction);
     }
 
     public JPanel getPanel1()
     {
         return panel1;
     }
+
+	public class CorrectAction extends AbstractAction
+	{
+		private Flashcard flashcard;
+
+		public CorrectAction(Flashcard flashcard)
+		{
+			this.flashcard = flashcard;
+		}
+
+		public void actionPerformed(ActionEvent e)
+		{
+			Controller.correctButtonPressed(flashcard);
+		}
+	}
+
+	public class IncorrectAction extends AbstractAction
+	{
+		private Flashcard flashcard;
+
+		public IncorrectAction(Flashcard flashcard)
+		{
+			this.flashcard = flashcard;
+		}
+
+		public void actionPerformed(ActionEvent e)
+		{
+			Controller.incorrectButtonPressed(flashcard);
+		}
+	}
 }

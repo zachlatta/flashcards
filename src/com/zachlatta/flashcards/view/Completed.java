@@ -15,32 +15,39 @@ public class Completed
     private JButton tryAgainButton;
     private JButton newSetButton;
     private JLabel statsLabel;
+	private Action tryAgainAction, newSetAction;
 
     public Completed(String stats)
     {
+		tryAgainAction = new TryAgainAction();
+		newSetAction = new NewSetAction();
+
         statsLabel.setText(stats);
 
-        tryAgainButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Controller.tryAgainPressed();
-            }
-        });
-
-        newSetButton.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Controller.newSetPressed();
-            }
-        });
+        tryAgainButton.addActionListener(tryAgainAction);
+        newSetButton.addActionListener(newSetAction);
     }
 
     public JPanel getPanel1()
     {
         return panel1;
     }
+
+	public class TryAgainAction extends AbstractAction
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			Controller.tryAgainPressed();
+		}
+	}
+
+	public class NewSetAction extends AbstractAction
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			Controller.newSetPressed();
+		}
+	}
 }
