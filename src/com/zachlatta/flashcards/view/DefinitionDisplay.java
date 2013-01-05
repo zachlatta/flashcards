@@ -27,6 +27,14 @@ public class DefinitionDisplay
 
         definitionLabel.setText(flashcard.getDefinition());
 
+		correctButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("A"), "pressed");
+		correctButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("LEFT"), "pressed");
+		incorrectButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("D"), "pressed");
+		incorrectButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("RIGHT"), "pressed");
+
+		correctButton.getActionMap().put("pressed", correctAction);
+		incorrectButton.getActionMap().put("pressed", incorrectAction);
+
         correctButton.addActionListener(correctAction);
         incorrectButton.addActionListener(incorrectAction);
     }

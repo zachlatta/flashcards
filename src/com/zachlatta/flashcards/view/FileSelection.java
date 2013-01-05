@@ -23,6 +23,12 @@ public class FileSelection
 		chooseAction = new ChooseAction(panel1, filePathLabel);
 		openAction = new OpenAction();
 
+		openFileButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "pressed");
+		openFileButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("S"), "pressed");
+		openFileButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("DOWN"), "pressed");
+
+		openFileButton.getActionMap().put("pressed", openAction);
+
 		chooseAFileButton.addActionListener(chooseAction);
 		openFileButton.addActionListener(openAction);
 	}

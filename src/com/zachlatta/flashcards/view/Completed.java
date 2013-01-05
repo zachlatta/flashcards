@@ -24,6 +24,14 @@ public class Completed
 
         statsLabel.setText(stats);
 
+		tryAgainButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("A"), "pressed");
+		tryAgainButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("LEFT"), "pressed");
+		newSetButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("D"), "pressed");
+		newSetButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("RIGHT"), "pressed");
+
+		tryAgainButton.getActionMap().put("pressed", tryAgainAction);
+		newSetButton.getActionMap().put("pressed", newSetAction);
+
         tryAgainButton.addActionListener(tryAgainAction);
         newSetButton.addActionListener(newSetAction);
     }

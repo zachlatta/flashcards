@@ -23,6 +23,12 @@ public class TermDisplay
 
         termLabel.setText(flashcard.getTerm());
 
+		flipCardButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("SPACE"), "pressed");
+		flipCardButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("S"), "pressed");
+		flipCardButton.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("DOWN"), "pressed");
+
+		flipCardButton.getActionMap().put("pressed", flipAction);
+
         flipCardButton.addActionListener(flipAction);
     }
 
